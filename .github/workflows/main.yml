@@ -1,5 +1,10 @@
 name: Audit Action Demo
-on: [push]
+on:
+  push:
+    branches:    
+      - 'main/**'
+    paths:
+      - '**.sol'
 jobs:
   Audit-Actions:
     runs-on: ubuntu-latest
