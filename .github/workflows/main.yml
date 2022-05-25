@@ -1,0 +1,13 @@
+name: Audit Action Demo
+on: [push]
+jobs:
+  Audit-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt update
+      - run: sudo apt install -y software-properties-common
+      - run: sudo add-apt-repository ppa:ethereum/ethereum
+      - run: sudo apt install -y solc
+      - run: sudo apt install -y libssl-dev python3-dev python3-pip
+      - run: yes | pip3 install mythril
+      - run: myth --version
