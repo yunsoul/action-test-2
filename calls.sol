@@ -1,5 +1,4 @@
 
-
 contract Caller {
 
 	address public fixed_address;
