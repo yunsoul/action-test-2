@@ -1,10 +1,11 @@
 name: Audit Action Demo
-on:
-  push:
-    branches:    
-      - 'main'
-    paths:
-      - '**.sol'
+on: [push]
+#on:
+#  push:
+#    branches:    
+#      - 'main'
+#    paths:
+#      - '**.sol'
 jobs:
   Audit-Actions:
     runs-on: ubuntu-latest
