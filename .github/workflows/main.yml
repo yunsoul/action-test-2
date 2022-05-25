@@ -21,3 +21,4 @@ jobs:
       - run: yes | pip3 install mythril
       - run: myth version
       - run: myth analyze .
+
