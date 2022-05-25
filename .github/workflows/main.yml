@@ -24,4 +24,7 @@ jobs:
       #- run: myth analyze *.sol -o json
       - run: myth analyze *.sol
       #- run: ls -R
-
+# save result to file
+# wget sarif converter python tool
+# convert result to sarif
+# upload sarif
