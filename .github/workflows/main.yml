@@ -2,7 +2,7 @@ name: Audit Action Demo
 on:
   push:
     branches:    
-      - 'main/**'
+      - 'main'
     paths:
       - '**.sol'
 jobs:
