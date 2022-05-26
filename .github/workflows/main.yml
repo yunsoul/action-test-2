@@ -22,8 +22,9 @@ jobs:
       - run: yes | pip3 install mythril
       - run: myth version
       #- run: myth analyze *.sol -o json
-      - run: myth analyze *.sol
-      #- run: ls -R
+      - run: myth analyze *.sol > result.txt
+      - run: ls -R
+      - run: cat result.txt
 # save result to file
 # wget sarif converter python tool
 # convert result to sarif
