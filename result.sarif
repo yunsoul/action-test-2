@@ -21,7 +21,7 @@
 			  },
               "properties" : {
                "problem.severity" : "warning",
-               "security-severity" : "3.0",
+               "security-severity" : "3.0"
               }
             },
 		    {
@@ -38,7 +38,7 @@
 			  },
 			  "properties" : {
                 "problem.severity" : "warning",
-                "security-severity" : "6.0",
+                "security-severity" : "6.0"
               }
 			}
           ]
