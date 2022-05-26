@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Mythril",
+          "rules": [
+            {
+              "id": "SWC ID:107",
+              "name": "Reentrancy",
+              "shortDescription": {
+                "text": "External Call To User-Supplied Address"
+              },
+              "fullDescription": {
+                "text": "One of the major dangers of calling external contracts is that they can take over the control flow. In the reentrancy attack (a.k.a. recursive call attack), a malicious contract calls back into the calling contract before the first invocation of the function is finished. This may cause the different invocations of the function to interact in undesirable ways."
+              },
+              "help": {
+                "text": "Make sure all internal state changes are performed before the call is executed. This is known as the Checks-Effects-Interactions pattern"
+			  },
+              "properties" : {
+               "problem.severity" : "warning",
+               "security-severity" : "3.0",
+              }
+            },
+		    {
+			  "id": "SWC ID:104",
+			  "name": "Unchecked Call Return Value",
+			  "shortDescription": {
+				"text": "Unchecked return value from external call"
+			  },
+			  "fullDescription": {
+				"text": "The return value of a message call is not checked. Execution will resume even if the called contract throws an exception. If the call fails accidentally or an attacker forces the call to fail, this may cause unexpected behaviour in the subsequent program logic."
+			  },
+			  "help": {
+				"text": "If you choose to use low-level call methods, make sure to handle the possibility that the call will fail by checking the return value."
+			  },
+			  "properties" : {
+                "problem.severity" : "warning",
+                "security-severity" : "6.0",
+              }
+			}
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SWC ID:107",
+          "message": {
+            "text": "Function name: thisisfine() - fixed_address.call()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "calls.sol"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "abcd:1"
+          }
+        },
+		{
+		  "ruleId": "SWC ID:104",
+		  "message": {
+			"text": "Function name: thisisfine() - fixed_address.call()"
+		  },
+		  "locations": [
+			{
+			  "physicalLocation": {
+				"artifactLocation": {
+				  "uri": "calls.sol"
+				},
+				"region": {
+				  "startLine": 14
+				}
+			  }
+			}
+		  ],
+		  "partialFingerprints": {
+             "primaryLocationLineHash": "abcd:2"
+          }
+		},
+		{
+           "ruleId": "SWC ID:107",
+           "message": {
+             "text": "Function name: callstoredaddress() - stored_address.call()"
+           },
+           "locations": [
+             {
+               "physicalLocation": {
+                 "artifactLocation": {
+                   "uri": "calls.sol"
+                 },
+                 "region": {
+                   "startLine": 27
+                 }
+               }
+             }
+           ],
+           "partialFingerprints": {
+             "primaryLocationLineHash": "abcd:3"
+           }
+         },
+		 {
+            "ruleId": "SWC ID:104",
+            "message": {
+              "text": "Function name: callstoredaddress() - stored_address.call()"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "calls.sol"
+                  },
+                  "region": {
+                    "startLine": 27
+                  }
+                }
+              }
+            ],
+            "partialFingerprints": {
+              "primaryLocationLineHash": "abcd:4"
+            }
+          }
+        
+      ]
+    }
+  ]
+}
