@@ -26,17 +26,16 @@
             },
 		    {
 			  "id": "SWC ID:104",
-			  "name": "Unchecked Call Return Value",
+			  "name": "",
 			  "shortDescription": {
-				"text": "Unchecked return value from external call"
+				"text": "Unchecked Call Return Value"
 			  },
 			  "fullDescription": {
-				"text": "The return value of a message call is not checked. Execution will resume even if the called contract throws an exception. If the call fails accidentally or an attacker forces the call to fail, this may cause unexpected behaviour in the subsequent program logic."
+				"text": ""
 			  },
 			  "help": {
 				"text": "If you choose to use low-level call methods, make sure to handle the possibility that the call will fail by checking the return value.",
-				"markdown": ":warning: Unchecked Call Return Value<br>  - Unchecked return value from external call<br>  - The return value of a message call is not checked. Execution will resume even if the called contract throws an exception. If the call fails accidentally or an attacker forces the call to fail, this may cause unexpected behaviour in the subsequent program logic.<br>:rocket: If you choose to use low-level call methods, make sure to handle the possibility that the call will fail by checking the return value."
-				             
+				"markdown": ":warning: **Unchecked Call Return Value**<br><br>- Unchecked return value from external call<br>- The return value of a message call is not checked. Execution will resume even if the called contract throws an exception. If the call fails accidentally or an attacker forces the call to fail, this may cause unexpected behaviour in the subsequent program logic.<br>:link: https://swcregistry.io/docs/SWC-124<br><br>:rocket: If you choose to use low-level call methods, make sure to handle the possibility that the call will fail by checking the return value."
 			  },
 			  "properties" : {
                 "problem.severity" : "warning",
@@ -63,10 +62,7 @@
                 }
               }
             }
-          ],
-          "partialFingerprints": {
-            "primaryLocationLineHash": "abcd:1"
-          }
+          ]
         },
 		{
 		  "ruleId": "SWC ID:104",
