@@ -248,7 +248,7 @@
         {
           "ruleId": "SWC-116",
           "message": {
-            "text": "\u003cbr\u003e-contract name : TimeLock\u003cbr\u003e- function name : withdraw()"
+            "text": "\u003cbr\u003e- contract name : TimeLock\u003cbr\u003e- function name : withdraw()"
           },
           "locations": [
             {
@@ -266,7 +266,7 @@
         {
           "ruleId": "SWC-101",
           "message": {
-            "text": "\u003cbr\u003e-contract name : TimeLock\u003cbr\u003e- function name : increaseLockTime(uint256)"
+            "text": "\u003cbr\u003e- contract name : TimeLock\u003cbr\u003e- function name : increaseLockTime(uint256)"
           },
           "locations": [
             {
@@ -284,7 +284,7 @@
         {
           "ruleId": "SWC-101",
           "message": {
-            "text": "\u003cbr\u003e-contract name : TimeLock\u003cbr\u003e- function name : deposit()"
+            "text": "\u003cbr\u003e- contract name : TimeLock\u003cbr\u003e- function name : deposit()"
           },
           "locations": [
             {
