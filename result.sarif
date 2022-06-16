@@ -88,7 +88,7 @@
 		{
            "ruleId": "SWC ID:107",
            "message": {
-             "text": "Function name: callstoredaddress() - stored_address.call()"
+             "text": "Function name: callstoredaddress() - stored_address.call()<br>**aaa**"
            },
            "locations": [
              {
