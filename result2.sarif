@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Mythril",
+          "rules": [
+            {
+              "id": "SWC-101",
+              "name": "",
+              "shortDescription": {
+                "text": "Integer Arithmetic Bugs"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Integer Arithmetic Bugs**\u003cbr\u003e\u003cbr\u003e- It is possible to cause an integer overflow or underflow in the arithmetic operation.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-101\u003cbr\u003e\u003cbr\u003e:rocket: Prevent this by constraining inputs using the require() statement or use the OpenZeppelin SafeMath library for integer arithmetic operations. Refer to the transaction trace generated for this issue to reproduce the issue."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "8.0"
+              }
+            },
+            {
+              "id": "SWC-104",
+              "name": "",
+              "shortDescription": {
+                "text": "Unchecked return value from external call."
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Unchecked return value from external call.**\u003cbr\u003e\u003cbr\u003e- The return value of a message call is not checked.\u003cbr\u003e- External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-104\u003cbr\u003e\u003cbr\u003e:rocket: The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "SWC-105",
+              "name": "",
+              "shortDescription": {
+                "text": "Unprotected Ether Withdrawal"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Unprotected Ether Withdrawal**\u003cbr\u003e\u003cbr\u003e- Any sender can withdraw Ether from the contract account.\u003cbr\u003e- Arbitrary senders other than the contract creator can profitably extract Ether from the contract account.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-105\u003cbr\u003e\u003cbr\u003e:rocket: Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "8.0"
+              }
+            },
+            {
+              "id": "SWC-106",
+              "name": "",
+              "shortDescription": {
+                "text": "Unprotected Selfdestruct"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Unprotected Selfdestruct**\u003cbr\u003e\u003cbr\u003e- Any sender can cause the contract to self-destruct.\u003cbr\u003e- Any sender can trigger execution of the SELFDESTRUCT instruction to destroy this contract account and withdraw its balance to an arbitrary address.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-106\u003cbr\u003e\u003cbr\u003e:rocket: Review the transaction trace generated for this issue and make sure that appropriate security controls are in place to prevent unrestricted access."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "8.0"
+              }
+            },
+            {
+              "id": "SWC-107",
+              "name": "",
+              "shortDescription": {
+                "text": "External Call To User-Supplied Address"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **External Call To User-Supplied Address**\u003cbr\u003e\u003cbr\u003e- A call to a user-supplied address is executed.\u003cbr\u003e- An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-107\u003cbr\u003e\u003cbr\u003e:rocket: Make sure that no state modifications are executed after this call and/or reentrancy guards are in place."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "3.0"
+              }
+            },
+            {
+              "id": "SWC-110",
+              "name": "",
+              "shortDescription": {
+                "text": "Exception State"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Exception State**\u003cbr\u003e\u003cbr\u003e- An assertion violation was triggered.\u003cbr\u003e- It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants.\u003cbr\u003e:link: link: https://swcregistry.io/docs/SWC-110\u003cbr\u003e\u003cbr\u003e:rocket: Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values)."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "SWC-112",
+              "name": "",
+              "shortDescription": {
+                "text": "Delegatecall to a user-specified address"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Delegatecall to a user-specified address**\u003cbr\u003e\u003cbr\u003e- The contract delegates execution to another contract with a user-supplied address.\u003cbr\u003e- The smart contract delegates execution to a user-supplied address.This could allow an attacker to execute arbitrary code in the context of this contract account and manipulate the state of the contract account or execute actions on its behalf.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-112\u003cbr\u003e\u003cbr\u003e:rocket: Check for invocations of delegatecall to a user-supplied address."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "8.0"
+              }
+            },
+            {
+              "id": "SWC-113",
+              "name": "",
+              "shortDescription": {
+                "text": "Multiple Calls in a Single Transaction"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Multiple Calls in a Single Transaction**\u003cbr\u003e\u003cbr\u003e- Multiple calls are executed in the same transaction.\u003cbr\u003e- This call is executed following another call within the same transaction. It is possible that the call never gets executed if a prior call fails permanently. This might be caused intentionally by a malicious callee.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-113\u003cbr\u003e\u003cbr\u003e:rocket: If possible, refactor the code such that each transaction only executes one external call or make sure that all callees can be trusted (i.e. they’re part of your own codebase)."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "3.0"
+              }
+            },
+            {
+              "id": "SWC-115",
+              "name": "",
+              "shortDescription": {
+                "text": "Dependence on tx.origin"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Dependence on tx.origin**\u003cbr\u003e\u003cbr\u003e- Use of tx.origin as a part of authorization control.\u003cbr\u003e- The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-115\u003cbr\u003e\u003cbr\u003e:rocket: Check whether control flow decisions are influenced by tx.origin."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "3.0"
+              }
+            },
+            {
+              "id": "SWC-116",
+              "name": "",
+              "shortDescription": {
+                "text": "Block values as a proxy for time"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Dependence on predictable environment variable**\u003cbr\u003e\u003cbr\u003e- Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Do nott use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-116\u003cbr\u003e\u003cbr\u003e:rocket: Check whether control flow decisions are influenced by block.coinbase,block.gaslimit, block.timestamp or block.number."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "3.0"
+              }
+            },
+            {
+              "id": "SWC-120",
+              "name": "",
+              "shortDescription": {
+                "text": "Weak Sources of Randomness from Chain Attributes"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Dependence on predictable environment variable**\u003cbr\u003e\u003cbr\u003e- Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Do nott use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-120\u003cbr\u003e\u003cbr\u003e:rocket: Check whether control flow decisions are influenced by block.coinbase,block.gaslimit, block.timestamp or block.number."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "3.0"
+              }
+            },
+            {
+              "id": "SWC-124",
+              "name": "",
+              "shortDescription": {
+                "text": "Write to an arbitrary storage location"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Write to an arbitrary storage location**\u003cbr\u003e\u003cbr\u003e- The caller can write to arbitrary storage locations.\u003cbr\u003e- It is possible to write to arbitrary storage locations. By modifying the values of storage variables, attackers may bypass security controls or manipulate the business logic of the smart contract.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-124\u003cbr\u003e\u003cbr\u003e:rocket: As a general advice, given that all data structures share the same storage (address) space, one should make sure that writes to one data structure cannot inadvertently overwrite entries of another data structure."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "8.0"
+              }
+            },
+            {
+              "id": "SWC-127",
+              "name": "",
+              "shortDescription": {
+                "text": "Jump to an arbitrary instruction"
+              },
+              "fullDescription": {
+                "text": ""
+              },
+              "help": {
+                "text": "",
+                "markdown": ":warning: **Jump to an arbitrary instruction**\u003cbr\u003e\u003cbr\u003e- The caller can redirect execution to arbitrary bytecode locations.\u003cbr\u003e- It is possible to redirect the control flow to arbitrary locations in the code. This may allow an attacker to bypass security controls or manipulate the business logic of the smart contract.\u003cbr\u003e:link: https://swcregistry.io/docs/SWC-127\u003cbr\u003e\u003cbr\u003e:rocket: Avoid using low-level-operations and assembly to prevent this issue."
+              },
+              "properties": {
+                "problem.severity": "warning",
+                "security-severity": "8.0"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SWC-116",
+          "message": {
+            "text": "\u003cbr\u003e-contract name : TimeLock\u003cbr\u003e- function name : withdraw()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample4.sol"
+                },
+                "region": {
+                  "startLine": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SWC-101",
+          "message": {
+            "text": "\u003cbr\u003e-contract name : TimeLock\u003cbr\u003e- function name : increaseLockTime(uint256)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample4.sol"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SWC-101",
+          "message": {
+            "text": "\u003cbr\u003e-contract name : TimeLock\u003cbr\u003e- function name : deposit()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample4.sol"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+      ]
+}
