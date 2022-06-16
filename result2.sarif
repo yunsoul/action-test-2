@@ -298,8 +298,89 @@
               }
             }
           ]
-        }
+        },
+        {
+          "ruleId": "SWC ID:107",
+          "message": {
+            "text": "Function name: thisisfine() - fixed_address.call()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "calls.sol"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+		{
+		  "ruleId": "SWC ID:104",
+		  "message": {
+			"text": "Function name: thisisfine() - fixed_address.call()"
+		  },
+		  "locations": [
+			{
+			  "physicalLocation": {
+				"artifactLocation": {
+				  "uri": "calls.sol"
+				},
+				"region": {
+				  "startLine": 14
+				}
+			  }
+			}
+		  ],
+		  "partialFingerprints": {
+             "primaryLocationLineHash": "abcd:2"
+          }
+		},
+		{
+           "ruleId": "SWC ID:107",
+           "message": {
+             "text": "<br>- contract name : CAller<br>- function name : callstoredaddress()"
+           },
+           "locations": [
+             {
+               "physicalLocation": {
+                 "artifactLocation": {
+                   "uri": "calls.sol"
+                 },
+                 "region": {
+                   "startLine": 27
+                 }
+               }
+             }
+           ],
+           "partialFingerprints": {
+             "primaryLocationLineHash": "abcd:3"
+           }
+         },
+		 {
+            "ruleId": "SWC ID:104",
+            "message": {
+              "text": "Function name: callstoredaddress() - stored_address.call()"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "calls.sol"
+                  },
+                  "region": {
+                    "startLine": 27
+                  }
+                }
+              }
+            ],
+            "partialFingerprints": {
+              "primaryLocationLineHash": "abcd:4"
+            }
+          }
       ]
     }
-      ]
+  ]
 }
