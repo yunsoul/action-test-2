@@ -297,89 +297,170 @@
                 }
               }
             }
-          ]
-        },
-        {
-          "ruleId": "SWC ID:107",
+	  ]
+	},
+	{
+          "ruleId": "SWC-107",
           "message": {
-            "text": "Function name: thisisfine() - fixed_address.call()"
+            "text": "\u003cbr\u003e- contract name : Caller\u003cbr\u003e- function name : thisisfine()"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "calls.sol"
+                  "uri": "sample1.sol"
                 },
                 "region": {
-                  "startLine": 14
+                  "startLine": 13
                 }
               }
             }
           ]
         },
-		{
-		  "ruleId": "SWC ID:104",
-		  "message": {
-			"text": "Function name: thisisfine() - fixed_address.call()"
-		  },
-		  "locations": [
-			{
-			  "physicalLocation": {
-				"artifactLocation": {
-				  "uri": "calls.sol"
-				},
-				"region": {
-				  "startLine": 14
-				}
-			  }
-			}
-		  ],
-		  "partialFingerprints": {
-             "primaryLocationLineHash": "abcd:2"
-          }
-		},
-		{
-           "ruleId": "SWC ID:107",
-           "message": {
-             "text": "<br>- contract name : CAller<br>- function name : callstoredaddress()"
-           },
-           "locations": [
-             {
-               "physicalLocation": {
-                 "artifactLocation": {
-                   "uri": "calls.sol"
-                 },
-                 "region": {
-                   "startLine": 27
-                 }
-               }
-             }
-           ],
-           "partialFingerprints": {
-             "primaryLocationLineHash": "abcd:3"
-           }
-         },
-		 {
-            "ruleId": "SWC ID:104",
-            "message": {
-              "text": "Function name: callstoredaddress() - stored_address.call()"
-            },
-            "locations": [
-              {
-                "physicalLocation": {
-                  "artifactLocation": {
-                    "uri": "calls.sol"
-                  },
-                  "region": {
-                    "startLine": 27
-                  }
+        {
+          "ruleId": "SWC-104",
+          "message": {
+            "text": "\u003cbr\u003e- contract name : Caller\u003cbr\u003e- function name : thisisfine()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample1.sol"
+                },
+                "region": {
+                  "startLine": 13
                 }
               }
-            ],
-            "partialFingerprints": {
-              "primaryLocationLineHash": "abcd:4"
             }
-          }
+          ]
+        },
+        {
+          "ruleId": "SWC-107",
+          "message": {
+            "text": "\u003cbr\u003e- contract name : Caller\u003cbr\u003e- function name : callstoredaddress()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample1.sol"
+                },
+                "region": {
+                  "startLine": 26
+                }
+              }
+            }
+          ]
+        },
+	{
+          "ruleId": "SWC-104",
+          "message": {
+            "text": "\u003cbr\u003e- contract name : Caller\u003cbr\u003e- function name : callstoredaddress()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample1.sol"
+                },
+                "region": {
+                  "startLine": 26
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SWC-107",
+          "message": {
+            "text": "\u003cbr\u003e- contract name : Caller\u003cbr\u003e- function name : reentrancy()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample1.sol"
+                },
+                "region": {
+                  "startLine": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SWC-104",
+          "message": {
+            "text": "\u003cbr\u003e- contract name : Caller\u003cbr\u003e- function name : reentrancy()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample1.sol"
+                },
+                "region": {
+                  "startLine": 17
+                }
+              }
+            }
+          ]
+        },
+	{
+          "ruleId": "SWC-107",
+          "message": {
+            "text": "\u003cbr\u003e- contract name : Caller\u003cbr\u003e- function name : reentrancy()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample1.sol"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SWC-107",
+          "message": {
+            "text": "\u003cbr\u003e- contract name : Caller\u003cbr\u003e- function name : calluseraddress(address)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample1.sol"
+                },
+                "region": {
+                  "startLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SWC-104",
+          "message": {
+            "text": "\u003cbr\u003e- contract name : Caller\u003cbr\u003e- function name : calluseraddress(address)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "sample1.sol"
+                },
+                "region": {
+                  "startLine": 22
+                }
+              }
+            }
+          ]
+        }
       ]
     }
   ]
